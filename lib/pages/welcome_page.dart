@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../utils/custom_button.dart';
+
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
@@ -43,32 +45,8 @@ class WelcomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              Center(
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.green),
-                    padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                      const EdgeInsets.symmetric(
-                          horizontal: 40.0, vertical: 12.0),
-                    ),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(32.0), // Set border radius
-                        // You can also set other border properties here
-                      ),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    'Explore',
-                    style: GoogleFonts.barlow(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
+              const Center(
+                child: CustomButton(buttonText: 'Let\'s go!'),
               ),
               const SizedBox(height: 50)
             ],
