@@ -3,8 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CustomButton extends StatelessWidget {
   final String buttonText;
+  final VoidCallback onPressed;
 
-  const CustomButton({super.key, required this.buttonText});
+  const CustomButton(
+      {super.key, required this.buttonText, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class CustomButton extends StatelessWidget {
           ),
         ),
       ),
-      onPressed: () {},
+      onPressed: onPressed,
       child: Text(
         buttonText,
         style: GoogleFonts.barlow(

@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_eth/pages/home_page.dart';
 
 import '../utils/custom_button.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
+
+  void navigateToHome(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const HomePage()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +31,7 @@ class WelcomePage extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(18.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,16 +45,19 @@ class WelcomePage extends StatelessWidget {
               ),
               const SizedBox(height: 25),
               Text(
-                'Experiance Ethiopian\'s best adventereous place with us ',
+                'Explore in the unparalleled beauty and richness of Ethiopia\'s most adventurous and captivating destinations ',
                 style: GoogleFonts.barlow(
-                  fontSize: 21,
-                  color: Colors.white,
-                  // fontWeight: FontWeight.bold,
-                ),
+                    fontSize: 19, color: Colors.white, height: 1.5
+                    // fontWeight: FontWeight.bold,
+                    ),
               ),
               const SizedBox(height: 30),
-              const Center(
-                child: CustomButton(buttonText: 'Let\'s go!'),
+              Center(
+                child: CustomButton(
+                  buttonText: 'Let\'s go!',
+                  onPressed: () =>
+                      {Navigator.pushReplacementNamed(context, '/home')},
+                ),
               ),
               const SizedBox(height: 50)
             ],
